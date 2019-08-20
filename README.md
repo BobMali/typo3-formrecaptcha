@@ -1,4 +1,4 @@
-##reCAPTCHA for TYPO3 EXT:form
+##reCAPTCHA for TYPO3 EXT:form##
 Define your reCAPTCHA api keys as environment variables: \
 `GOOGLE_RECAPTCHA_PUBLIC_KEY` <br /> 
 and <br />
