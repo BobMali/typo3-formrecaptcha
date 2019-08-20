@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages"
+          date="2019-08-19T13:37:00Z">
+        <header>
+            <authorName>Tobias Kretschmann</authorName>
+            <authorEmail>t.kretschmann@neusta.de</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="formEditor.elements.Recaptcha.label">
+                <source>reCAPTCHA</source>
+                <target>reCAPTCHA</target>
+            </trans-unit>
+            <trans-unit id="formEditor.elements.FormElement.editor.recaptchaValidator.label">
+                <source>reCAPTCHA validation is active</source>
+                <target>reCAPTCHA Validierung ist aktiviert</target>
+            </trans-unit>
+            <trans-unit id="formEditor.elements.TextMixin.validators.Recaptcha.editor.header.label">
+                <source>reCAPTCHA validation</source>
+                <target>reCAPTCHA Validierung</target>
+            </trans-unit>
+            <trans-unit id="formEditor.elements.Recaptcha.editor.showLabel.label">
+                <source>Show label in frontend</source>
+                <target>Zeige reCAPTCHA Label im Frontend</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

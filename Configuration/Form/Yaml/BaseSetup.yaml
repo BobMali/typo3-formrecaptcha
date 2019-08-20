@@ -1,0 +1,54 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formEditor:
+            translationFile:
+              10: 'EXT:form/Resources/Private/Language/Database.xlf'
+              1566214550: 'EXT:formrecaptcha/Resources/Private/Language/locallang_recaptcha.xlf'
+            dynamicRequireJsModules:
+              additionalViewModelModules:
+                1566214550: 'TYPO3/CMS/Formrecaptcha/Backend/FormEditor/RecaptchaViewModel'
+            formEditorPartials:
+              FormElement-Recaptcha: 'Stage/SimpleTemplate'
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                partialRootPaths:
+                  1566214550: 'EXT:formrecaptcha/Resources/Private/Partials/Forms/Frontend/FormElements/'
+            Recaptcha:
+              __inheritances:
+                10: 'TYPO3.CMS.Form.mixins.formElementMixins.FormElementMixin'
+              implementationClassName: 'TYPO3\CMS\Form\Domain\Model\FormElements\GenericFormElement'
+              properties:
+                containerClassAttribute: 'recaptcha'
+              formEditor:
+                label: 'formEditor.elements.Recaptcha.label'
+                group: custom
+                groupSorting: 700
+                iconIdentifier: 'recaptcha'
+                predefinedDefaults:
+                  validators:
+                    -
+                      identifier: 'Recaptcha'
+                  renderingOptions:
+                    submitButtonLabel: 'true'
+                editors:
+                  800: null
+                  900:
+                    identifier: 'validators'
+                    templateName: 'Inspector-ValidatorsEditor'
+                    label: 'formEditor.elements.FormElement.editor.recaptchaValidator.label'
+                    selectOptions:
+                      10:
+                        value: 'Recaptcha'
+                        label: 'formEditor.elements.TextMixin.validators.Recaptcha.editor.header.label'
+
+
+          validatorsDefinition:
+            Recaptcha:
+              implementationClassName: 'Neusta\Formrecaptcha\Validation\RecaptchaValidator'
+              formEditor:
+                iconIdentifier: 't3-form-icon-validator'
+                label: 'formEditor.elements.TextMixin.validators.Recaptcha.editor.header.label'
