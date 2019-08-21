@@ -5,4 +5,4 @@ and <br />
 `GOOGLE_RECAPTCHA_PRIVATE_KEY`
  
 
-I recommend to use DotEnv Conntector for this `composer req vlucas/phpdotenv` 
+I suggest to use DotEnv Conntector for this `composer req vlucas/phpdotenv` 

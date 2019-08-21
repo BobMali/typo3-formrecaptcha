@@ -46,6 +46,7 @@ class ReCaptchaViewHelper extends AbstractFormFieldViewHelper
                 1566304358
             );
         }
+
         return $publicKey;
     }
 

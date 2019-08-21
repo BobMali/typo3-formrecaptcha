@@ -2,7 +2,7 @@
 if (!defined('TYPO3_MODE')) {
     die ('Access denied.');
 }
-(static function ($extensionKey): void {
+(static function (string $extensionKey): void {
 
     // TypoScript Setup
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup(

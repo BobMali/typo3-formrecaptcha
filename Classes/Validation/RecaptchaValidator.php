@@ -31,7 +31,6 @@ class RecaptchaValidator extends AbstractValidator
                 1566209403
             );
         }
-
     }
 
     /**
@@ -72,6 +71,7 @@ class RecaptchaValidator extends AbstractValidator
                 1566304359
             );
         }
+
         return $publicKey;
     }
 }
