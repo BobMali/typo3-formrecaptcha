@@ -19,10 +19,6 @@
                 <source>reCAPTCHA validation</source>
                 <target>reCAPTCHA Validierung</target>
             </trans-unit>
-            <trans-unit id="formEditor.elements.Recaptcha.editor.showLabel.label">
-                <source>Show label in frontend</source>
-                <target>Zeige reCAPTCHA Label im Frontend</target>
-            </trans-unit>
         </body>
     </file>
 </xliff>
