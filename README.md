@@ -1,15 +1,15 @@
-#reCAPTCHA for TYPO3 EXT:form
+# reCAPTCHA for TYPO3 EXT:form
 You can either choose to define your reCAPTCHA api Keys with typoscript,
 or as environment variables.
 
-##Typoscript setup 
+## Typoscript setup 
 Check out the typoscript constants file for it: `formrecaptcha/Configuration/TypoScript/constants.typoscript`
 
 Make sure you add constants for 
 `publicKey` and `privateKey`.<br /> 
 You could also change `apiScript` and `verificationServer` but that is not necessary.
 
-##Environment variables
+## Environment variables
 I suggest to use DotEnv Conntector for this `composer req vlucas/phpdotenv`
 
 Define your reCAPTCHA api keys as environment variables: \
