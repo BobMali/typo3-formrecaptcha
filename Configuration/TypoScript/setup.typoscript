@@ -1,15 +1,24 @@
+plugin.tx_formrecaptcha {
+	settings {
+		apiScript = {$plugin.tx_formrecaptcha.settings.apiScript}
+		verificationServer = {$plugin.tx_formrecaptcha.settings.verificationServer}
+		publicKey = {$plugin.tx_formrecaptcha.settings.publicKey}
+		privateKey = {$plugin.tx_formrecaptcha.settings.privateKey}
+	}
+}
+
 plugin.tx_form {
-    settings {
-        yamlConfigurations {
-            1566294046548 = EXT:formrecaptcha/Configuration/Form/Yaml/BaseSetup.yaml
-        }
-    }
+	settings {
+		yamlConfigurations {
+			1566294046548 = EXT:formrecaptcha/Configuration/Form/Yaml/BaseSetup.yaml
+		}
+	}
 }
 
 module.tx_form {
-    settings {
-        yamlConfigurations {
-            1566294046548 = EXT:formrecaptcha/Configuration/Form/Yaml/BaseSetup.yaml
-        }
-    }
+	settings {
+		yamlConfigurations {
+			1566294046548 = EXT:formrecaptcha/Configuration/Form/Yaml/BaseSetup.yaml
+		}
+	}
 }

@@ -1,0 +1,11 @@
+plugin.tx_formrecaptcha {
+	settings {
+		apiScript = https://www.google.com/recaptcha/api.js
+
+		verificationServer = https://www.google.com/recaptcha/api/siteverify
+
+		publicKey =
+
+		privateKey =
+	}
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2019-08-19T13:37:00Z">
+        <header>
+            <authorName>Tobias Kretschmann</authorName>
+            <authorEmail>t.kretschmann@neusta.de</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="error_formrecaptcha_timeout-or-duplicate">
+                <source>Duplicate submission of form. Please check the captcha again.</source>
+                <target>Erneute Formularübermittlung. Bitte bestätigen Sie das captcha erneut.</target>
+            </trans-unit>
+            <trans-unit id="error_formrecaptcha_invalid-input-secret">
+                <source>Invalid input secret</source>
+                <target>Ungültiger Schlüssel</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
