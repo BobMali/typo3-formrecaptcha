@@ -20,4 +20,3 @@ and
 `GOOGLE_RECAPTCHA_VERIFICATION_SERVER`
 but that is not necessary.
  
-
