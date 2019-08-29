@@ -2,7 +2,7 @@
   "name": "teamneusta/formrecaptcha",
   "type": "typo3-cms-extension",
   "description": "Adds Google's reCAPTCHA to EXT:form",
-  "license": "GLP-2.0+",
+  "license": ["GPL-2.0-or-later"],
   "homepage": "https://www.team-neusta.de/",
   "authors": [
     {
