@@ -1,5 +1,5 @@
 {
-  "name": "neusta/formrecaptcha",
+  "name": "teamneusta/formrecaptcha",
   "type": "typo3-cms-extension",
   "description": "Adds Google's reCAPTCHA to EXT:form",
   "license": "GLP-2.0+",
