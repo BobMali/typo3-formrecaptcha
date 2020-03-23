@@ -1,4 +1,7 @@
+Works great with reCAPTCHA v2 checkbox!
+
 # reCAPTCHA for TYPO3 EXT:form
+
 You can either choose to define your reCAPTCHA api Keys with typoscript,
 or as environment variables.
 
