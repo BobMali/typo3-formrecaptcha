@@ -1,8 +1,8 @@
 {
-  "name": "teamneusta/formrecaptcha",
+  "name": "neusta/formrecaptcha",
   "type": "typo3-cms-extension",
-  "description": "Adds Google's reCAPTCHA to EXT:form",
-  "license": ["GPL-2.0-or-later"],
+  "description": "Deviates from published version! Customer specific - Adds Google's reCAPTCHA to EXT:form",
+  "license": "GLP-2.0+",
   "homepage": "https://www.team-neusta.de/",
   "authors": [
     {
@@ -12,16 +12,21 @@
       "role": "Developer"
     }
   ],
-  "version": "1.0.1",
+  "version": "2.0.0",
   "require": {
-    "typo3/cms-core": "^8.7 | ^9.5",
-    "typo3/cms-form": "^8.7 | ^9.5"
+    "ext-json": "*",
+    "typo3/cms-form": "^10.4"
   },
   "suggest": {
-    "vlucas/phpdotenv": "^2.4"
+    "vlucas/phpdotenv": "^5.2"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-master"
+    "roave/security-advisories": "dev-latest"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "formrecaptcha"
+    }
   },
   "autoload": {
     "psr-4": {

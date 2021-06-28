@@ -4,8 +4,10 @@ declare(strict_types=1);
 namespace Neusta\Formrecaptcha\Service;
 
 use Neusta\Formrecaptcha\Exception\MissingKeyException;
+use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
+use const DIRECTORY_SEPARATOR;
 
 /**
  * Class ConfigurationService
@@ -14,20 +16,13 @@ use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
  */
 class ConfigurationService
 {
-    /**
-     * @var ConfigurationService
-     */
-    private static $_instance;
-
-    /**
-     * @var array
-     */
-    private static $settings;
+    private static ?ConfigurationService $_instance = null;
+    private static ?array $settings = null;
 
     public static function getInstance(): ConfigurationService
     {
         if (self::$_instance === null) {
-            self::$_instance = new self;
+            self::$_instance = new self();
         }
 
         return self::$_instance;
@@ -123,5 +118,35 @@ class ConfigurationService
         }
 
         return $apiScript;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getReCaptchaFormValidationScript(): string
+    {
+        if ((bool)(self::$settings['validateReCaptchaCheckbox'] ?? false) === false) {
+            return '';
+        }
+
+        $absolute = (bool)(self::$settings['formValidationScript']['absolute'] ?? false);
+
+        $uri = self::$settings['formValidationScript']['_typoScriptNodeValue'] ?? '';
+        $uri = GeneralUtility::getFileAbsFileName($uri);
+
+        $pathSiteLength = \strlen(Environment::getPublicPath() . '/');
+        $uri = DIRECTORY_SEPARATOR . \substr($uri, $pathSiteLength);
+
+        if ($absolute === true) {
+            $uri = GeneralUtility::getIndpEnv('TYPO3_REQUEST_HOST') . $uri;
+        }
+
+        return $uri;
+    }
+
+    public static function reset(): void
+    {
+        self::$_instance = null;
+        self::$settings = null;
     }
 }

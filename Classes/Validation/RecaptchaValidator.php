@@ -3,20 +3,23 @@ declare(strict_types=1);
 
 namespace Neusta\Formrecaptcha\Validation;
 
+use JsonException;
+use Neusta\Formrecaptcha\Exception\MissingKeyException;
 use Neusta\Formrecaptcha\Service\ConfigurationService;
 use TYPO3\CMS\Core\Http\RequestFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\HttpUtility;
 use TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator;
+use function json_decode;
 
 class RecaptchaValidator extends AbstractValidator
 {
-    public const VERIFY_SERVER = 'https://www.google.com/recaptcha/api/siteverify';
-
     /**
      * Validate the captcha value from the request and add an error if not valid
      *
      * @param mixed $value The value
+     * @throws JsonException
+     * @throws MissingKeyException
      */
     public function isValid($value): void
     {
@@ -37,12 +40,14 @@ class RecaptchaValidator extends AbstractValidator
 
     /**
      * @return array
+     * @throws JsonException
+     * @throws MissingKeyException
      */
     public function validateReCaptcha(): array
     {
         $reCaptchaFormFieldValue = GeneralUtility::_GP('g-recaptcha-response');
 
-        $configurationService = ConfigurationService::getInstance()::initialize();
+        $configurationService = ConfigurationService::getInstance();
         $url = HttpUtility::buildUrl(
             [
                 'host'  => $configurationService::getVerificationServer(),
@@ -59,6 +64,12 @@ class RecaptchaValidator extends AbstractValidator
         $requestService = GeneralUtility::makeInstance(RequestFactory::class);
         $response = $requestService->request($url, 'POST');
 
-        return \GuzzleHttp\json_decode($response->getBody()->getContents(), true);
+        return json_decode(
+            $response->getBody()
+                ->getContents(),
+            true,
+            512,
+            JSON_THROW_ON_ERROR
+        );
     }
 }

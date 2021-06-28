@@ -4,8 +4,7 @@ TYPO3:
       prototypes:
         standard:
           formEditor:
-            translationFile:
-              10: 'EXT:form/Resources/Private/Language/Database.xlf'
+            translationFiles:
               1566214550: 'EXT:formrecaptcha/Resources/Private/Language/locallang_recaptcha.xlf'
             dynamicRequireJsModules:
               additionalViewModelModules:
