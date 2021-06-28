@@ -14,20 +14,13 @@ use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
  */
 class ConfigurationService
 {
-    /**
-     * @var ConfigurationService
-     */
-    private static $_instance;
-
-    /**
-     * @var array
-     */
-    private static $settings;
+    private static ?ConfigurationService $_instance = null;
+    private static ?array $settings = null;
 
     public static function getInstance(): ConfigurationService
     {
         if (self::$_instance === null) {
-            self::$_instance = new self;
+            self::$_instance = new self();
         }
 
         return self::$_instance;

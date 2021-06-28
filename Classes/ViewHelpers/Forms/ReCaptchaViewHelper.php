@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Neusta\Formrecaptcha\ViewHelpers\Forms;
 
 use Neusta\Formrecaptcha\Service\ConfigurationService;
+use TYPO3\CMS\Core\Page\AssetCollector;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\ViewHelpers\Form\AbstractFormFieldViewHelper;
@@ -25,18 +26,13 @@ class ReCaptchaViewHelper extends AbstractFormFieldViewHelper
     {
         $configurationService = ConfigurationService::getInstance()::initialize();
 
-        GeneralUtility::makeInstance(PageRenderer::class)->addJsFooterLibrary(
+        GeneralUtility::makeInstance(AssetCollector::class)->addJavaScript(
             'recaptchaapi',
             $configurationService::getApiScript(),
-            'text/javascript',
-            false,
-            false,
-            '',
-            true,
-            '|',
-            true,
-            '',
-            true
+            [
+                'async' => true,
+                'defer' => true
+            ]
         );
 
         return '<div class="g-recaptcha" data-sitekey="' . $configurationService::getPublicKey() . '"></div>';
