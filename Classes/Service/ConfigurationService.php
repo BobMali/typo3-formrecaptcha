@@ -15,6 +15,9 @@ use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
 class ConfigurationService
 {
     private static ?ConfigurationService $_instance = null;
+    /**
+     * @var array<mixed>|null
+     */
     private static ?array $settings = null;
 
     public static function getInstance(): ConfigurationService
