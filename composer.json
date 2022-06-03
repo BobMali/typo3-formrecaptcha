@@ -12,15 +12,21 @@
       "role": "Developer"
     }
   ],
-  "version": "2.0.1",
+  "version": "3.0.0",
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "formrecaptcha"
+    }
+  },
   "extra": {
     "typo3/cms": {
       "extension-key": "formrecaptcha"
     }
   },
   "require": {
-    "typo3/cms-core": "^10.4",
-    "typo3/cms-form": "^10.4"
+    "typo3/cms-core": "^10.4 || ^11.5",
+    "typo3/cms-extbase": "^10.4 || ^11.5",
+    "typo3/cms-form": "^10.4 || ^11.5"
   },
   "suggest": {
     "vlucas/phpdotenv": "^5.2"
@@ -30,8 +36,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Neusta\\Formrecaptcha\\": "Classes/",
-      "Neusta\\Formrecaptcha\\Tests\\": "Tests/"
+      "Neusta\\Formrecaptcha\\": "Classes/"
     }
   }
 }

@@ -1,22 +1,28 @@
 <?php
+
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Imaging\IconRegistry;
+use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
+
 if (!defined('TYPO3')) {
-    die ('Access denied.');
+    die('Access denied.');
 }
 (static function (string $extensionKey): void {
 
     // TypoScript Constants
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptConstants(
+    ExtensionManagementUtility::addTypoScriptConstants(
         '<INCLUDE_TYPOSCRIPT:source="FILE:EXT:' . $extensionKey . '/Configuration/TypoScript/constants.typoscript">'
     );
     // TypoScript Setup
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup(
+    ExtensionManagementUtility::addTypoScriptSetup(
         '<INCLUDE_TYPOSCRIPT:source="FILE:EXT:' . $extensionKey . '/Configuration/TypoScript/setup.typoscript">'
     );
 
-    $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+    $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
     $iconRegistry->registerIcon(
         'recaptcha',
-        \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        SvgIconProvider::class,
         [
             'source' => 'EXT:formrecaptcha/Resources/Public/Icons/recaptcha.svg'
         ]

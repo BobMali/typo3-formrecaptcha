@@ -5,7 +5,6 @@ namespace Neusta\Formrecaptcha\ViewHelpers\Forms;
 
 use Neusta\Formrecaptcha\Service\ConfigurationService;
 use TYPO3\CMS\Core\Page\AssetCollector;
-use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\ViewHelpers\Form\AbstractFormFieldViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
